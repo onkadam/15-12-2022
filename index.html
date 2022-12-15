@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="fname" placeholder="Enter your first name">
+        <input type="text" name="lname" placeholder="Enter your last name">
+        <input type="submit" value="Save" onclick="saveData(event)">
+    </form>
+    <ul id="myul">
+        <li></li>
+    </ul>
+
+
+    <script>
+        //Globle variable
+        let myul = document.getElementById("myul")
+
+        myul.innerHTML = "";
+        function saveData(e){  //e = event = formal argument
+            e.preventDefault();
+            console.log('ok')
+
+            //Local variable
+            let fn = document.querySelector('input[name="fname"]');
+            let ln = document.querySelector('input[name="lname"]');
+
+            console.log(fn.value);
+            console.log(ln.value);
+
+            myul.innerHTML += '<li>'+fn.value+" "+ln.value +'</li>'
+        }
+    </script>
+</body>
+</html>
